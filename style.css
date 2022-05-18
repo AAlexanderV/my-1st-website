@@ -1,0 +1,1320 @@
+body 
+{ 
+    margin: 0;
+    background-color: rgb(255, 255, 255); 
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; */
+}
+
+h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.main_image{
+    width: 100%;
+    height: 100vh;
+    background: url("img/intro3.jpg") center no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    position: relative;
+}
+
+.intro {
+    top: 90%;
+    left: 50%;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.intro_inner {
+    width: 100%;
+    margin: 0 auto;
+}
+/* Для лого */
+.unselectable {
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.intro_welcome {
+    color:rgb(255, 255, 255);
+    text-align: center;
+    font-size:100px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.intro_logo { 
+    color:rgb(220, 0, 0);
+    text-align: center;
+    font-size:100px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.intro_slogan {
+    color:rgb(255, 255, 255);
+    text-align: center;
+    font-size:60px;
+    line-height: 5;
+    font-family: 'Kaushan Script', cursive;
+}
+/* Для лого */
+
+.header {
+    padding-top: 30px;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 2;
+    transition: background-color .2s linear;
+}
+
+.header.fixed {
+    background-color: #dc0e0e;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+    position:fixed;
+    padding: 10px 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    /* transform: translate3d(0,0,0); */
+}
+
+.header.red {
+    background-color: #dc0e0e;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+}
+
+.header_inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header_logo {
+    margin-left: 50px;
+    font-size: 40px;
+    font-weight: 700;
+    color: rgb(220, 0, 0);
+    transition: color .2s linear;
+    text-decoration: none; 
+    position: relative;
+}
+
+.header_logo.white {
+    color: #ffffff;
+}
+
+.header_logo:hover {
+    color: rgb(255, 255, 255);
+}
+
+.nav {
+    font-size: 20px;
+    text-transform: uppercase;
+    margin: 15px 0 0 0;
+    
+}
+
+.nav.active {
+    display: flex;
+    flex-direction: column;
+    margin: 40px 10px 0 0;
+}
+
+.nav.active .nav_link{
+    margin: 10px;
+}
+
+.nav_link {
+    color: #fff;
+    text-decoration: none;
+    transition: color .2s linear;
+    vertical-align: top;
+    display: inline-block;
+    margin: 0 22px;
+    position: relative;
+}
+
+.nav_link::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+    display: none;
+    position: absolute;
+    background-color: rgb(0, 0, 0);
+    top: 100%;
+    left: 0;
+    z-index: 1;
+}
+
+.nav_link:hover {
+    color: black;
+}
+
+.nav_link:hover::after {
+    display: block;
+}
+
+/* Burger menu btn */
+.nav_toggle {
+    display: none;
+    position: absolute;
+    width: 30px;
+    top: 38px;
+    right: 40px;
+    z-index: 3;
+    padding: 8px 0;
+    cursor: pointer;
+}
+
+.header.fixed .nav_toggle{
+    top: 20px;
+}
+
+/* превратить в крестик,если актив есть*/
+.nav_toggle.active .toggle_item{
+    background: none;
+}
+.nav_toggle.active .toggle_item::before {
+    transform-origin: left top;
+    transform: rotate(45deg) translateX(-2px);
+    background: #000;
+    transition: transform .3s linear;
+}
+.nav_toggle.active .toggle_item::after {
+    transform-origin: left bottom;
+    transform: rotate(-45deg) translateX(-3px);
+    background: #000;
+    transition: transform .3s linear;
+}
+/* превратить в крестик,если актив есть*/
+
+.toggle_item {
+    /* display: none; */
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    margin: auto;
+}
+
+.toggle_item::before,
+.toggle_item::after {
+    content: "";
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    position: absolute;
+}
+
+.toggle_item::before {
+    top: 0;
+}
+.toggle_item::after {
+    bottom: 0;
+}
+/* Burger menu btn */
+
+.header_slogan {
+    top: 0;
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: left;   
+}
+.header_slogan.hide {
+    display: none;
+}
+
+.slogan {
+    margin-left: 150px;
+    font-size: 17px;
+    color: rgb(231, 231, 231);
+    text-align: right;
+    line-height: 0.9;
+}
+/* наші клієнти */
+.clients {
+    background-color: rgb(170, 170, 170);
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: large;
+    font-weight: 700;
+    padding: 5px 0;
+}
+
+.clients_box {
+    display: flex;
+    flex-direction: row;
+    padding-top: 15px;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: space-between;  
+}
+
+.client {
+    border-radius: 10%;
+    width: 100%;
+    max-width: 250px;
+    border-style: outset;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    margin: 0 auto 0 auto;
+    position: relative;
+    transition: all 0.2s linear;
+}
+
+.client:hover {
+    box-shadow: 6px 6px 35px 10px rgb(132, 132, 132);
+    transform: scale(1.1, 1.1);
+}
+/* наші клієнти */
+
+.underline_grey {
+    margin-top: 20px;
+    width: 50%;
+    max-width: 400px;
+    box-align: center;
+    color: rgb(170, 170, 170);
+    height: 5px;
+    background-color: rgb(170, 170, 170);
+}
+
+/* Sections */
+.section {
+    padding-top: 100px;
+}
+
+.section_header {
+    font-size: 25px;
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.section_header::after {
+    display: block;
+    content: "";
+    width: 70px;
+    height: 3px;
+    background-color: #f38181;
+    margin: 10px auto;
+}
+
+.section_text {
+    padding: 20px 30px;
+    max-width: 1000 px;
+    text-align: left;
+    line-height: 2;
+}
+
+.section_text p {
+text-align: justify;
+}
+
+/* ABOUT logo*/
+.about_logo {
+    font-size: 30px;
+    font-weight: 700;
+    color: rgb(220, 0, 0);
+    text-decoration: none; 
+    line-height: 0;
+}
+
+/* Services */
+.service_header {
+    /* text-transform: uppercase; */
+    font-size: 17px;
+    color: rgb(0, 0, 0);
+}
+ 
+.section_services {
+    font-style: 30px;
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    padding: 0 30px;
+    margin: 50px 0 0;
+    width: auto;
+    max-width: 1200;
+    min-width: 700;
+    position: relative;
+}
+
+/* кнопки навигации */
+.tabs_nav {
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between;
+    padding: 0 30px;
+    width: 70%;
+    margin: auto;
+  }
+
+.dropbtn {
+    background-color: rgb(192, 192, 192);
+    color: white;
+    border: 3px solid #fff;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all .2s linear;
+  }
+
+ .dropbtn:hover  {
+    background-color: #858383;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.dropbtn.active {
+    background-color: rgb(0, 0, 0);
+    font-size: 18px;
+}
+/* кнопки навигации */
+
+/* Окно контента */
+.content {
+    background-color: #ffffff;
+    padding: 30px;
+}
+
+.dropdown-content {
+    display: none;
+    background-color: #eeeeee;
+    width: auto;
+    max-width: 1200;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+    right: 30px;
+    padding-top: 30px;
+    z-index: 3000;
+}
+
+.dropdown-content.active {
+    display: block;
+}
+
+.service_block {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 40px;    
+}
+/* Окно контента */
+
+/* Стилизация наполнения контента */
+.service_block h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: rgb(220, 0, 0);
+    text-decoration: none; 
+    line-height: 1;
+}
+
+.service_block ul li {
+    font-size: 18px;
+    font-weight: 400;
+    color: rgb(0, 0, 0);
+    padding: 0px;
+    line-height: 1.1;
+}
+/* Стилизация наполнения контента */
+
+/* Публикации */
+.blog_color {
+    width: 100%;
+    margin-top: 40px;
+    background-color: rgb(233, 233, 233);
+    display: flex;
+    justify-content: space-around;
+}
+
+.swiper {
+    margin-top: 40px;
+    width: 100%;
+    max-width: 1400px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    position: relative;
+}
+
+.swiper-button-prev::after, 
+.swiper-button-next::after {
+    color: #000000;
+    transition: all .1s linear;
+}
+
+.swiper-button-prev:hover::after,
+.swiper-button-next:hover::after{
+    color: #ff0000;
+    font-size: 35px;
+    font-weight: 900;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+}
+
+.blog_item {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 10px;
+}
+
+.img_blog {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    margin: 0 auto;
+    /* position: relative; */
+}
+.img_blog img{
+    width: 100%;
+    box-shadow: 10px 10px 10px rgba(78, 78, 78, 0.5);
+}
+
+.date {
+    width: auto;
+    max-width: 400px;
+    opacity: .5;
+}
+.date p {
+    text-indent: 1%;
+}
+
+.blog_text {
+    width: auto;
+    max-width: 700px;
+    margin: 0 10px;
+    margin: auto;
+}
+
+.blog_text h1 {
+    font-size: 25px;
+    font-weight: 700;
+    text-align: left;
+    padding: 0;
+    line-height: 1.3;
+}
+
+.blog_text p {
+    text-indent: 5%;
+    text-align: justify;
+    padding: 0;
+    opacity: .6;
+    margin: 0 0 15px 0;
+}
+
+.blog_text a {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    color: #532fc9;
+    opacity: 1;
+}
+
+.blog_btn {
+    font-size: 0;
+    color: transparent;
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    transform: rotateY(-50%);
+}
+
+.blog_btn::after {
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+    border-top: 2px solid #ccc;
+    border-left: 2px solid #ccc;
+}
+
+.left {
+    left: 10px;
+    transform: rotate(-45deg);
+}
+
+.right {
+    right: 10px;
+    transform: rotate(135deg);
+}
+
+/* Публикации */
+
+/* Контакти */
+.contacts {
+    width: auto;
+    max-width: 1200;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin-left: 30px;
+}
+
+.contacts_header {
+    font-size: 25px;
+    margin-top: 20px;
+}
+
+.contacts_inner{
+    text-decoration: none;
+    color: black;
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.map {
+    width: 100%;
+    max-width: 1200;
+    text-align: center;
+    /* margin: 0 20px; */
+    padding: 30px 0;
+}
+/* Контакти */
+
+.ending {
+    padding-bottom: 35px;
+    /* position: fixed; */
+    background-color: rgb(200, 200, 200);
+    width: 100%;
+    z-index: 1000;
+    height: 125px;
+}
+
+.ending_logo {
+    margin-left: 50px;
+    font-size: 40px;
+    font-weight: 700;
+    color: rgb(220, 0, 0);
+    transition: color .2s linear;
+    text-decoration: none; 
+    position: relative;
+}
+.ending_logo::after {
+    content: "Legal path for your ideas";
+    /* display: block; */
+    width: 60%;
+    position: absolute;
+    margin-top: 10px;
+    /* padding-left: 100px; */
+    color: rgb(255, 255, 255);
+    top: 100%;
+    right: 0;
+    z-index: 100;
+    font-size: 17px;
+    line-height: .9;
+    text-align: right;
+}
+
+.ending_logo:hover {
+    color: rgb(255, 255, 255);
+}
+
+/* MEDIA */
+@media (max-height: 900px) {
+    .header_logo {
+        font-size: 30px;
+        font-weight: 600;
+    }
+    .slogan {
+        margin-left: 118px;
+        font-size: 14px;
+        line-height: 0.9;
+    }
+
+    .nav {
+        font-size: 15px;
+    }
+    
+    .intro_welcome {
+        font-size:75px;
+    }
+    
+    .intro_logo { 
+        font-size:80px;
+    }
+    
+    .intro_slogan {
+        font-size:45px;
+        line-height: 4;
+    }
+    
+    .section {
+        padding-top: 70px;
+    }
+
+    .section_header {
+        font-size: 23px;
+        font-weight: 650;
+    }
+
+    .section_header::after {
+        margin: 5px auto;
+    }
+
+    .ending_logo {
+        font-size: 30px;
+        font-weight: 600;
+    }
+    .ending_logo::after {
+        width: 80%;
+        font-size: 15px;
+    }
+}
+
+@media (max-height: 600px) {
+    .header_logo {
+        font-size: 27px;
+        font-weight: 600;
+    }
+    
+    .slogan {
+        margin-left: 100px;
+    }
+
+    .intro_welcome {
+        font-size:50px;
+    }
+    
+    .intro_logo { 
+        font-size:60px;
+    }
+    
+    .intro_slogan {
+        font-size:30px;
+        line-height: 3;
+    }
+
+    .section {
+        padding-top: 50px;
+    }
+
+    .section_header {
+        font-size: 20px;
+        font-weight: 600;
+    }
+    
+    .section_header::after {
+        width: 70px;
+        height: 3px;
+        margin: 5px auto;
+    }
+    
+    .blog_text h1 {
+        font-size: 20px;
+    }
+    
+    .blog_text p {
+        font-size: 14px;
+    }
+
+    .ending_logo {
+        font-size: 27px;
+        font-weight: 600;
+    }
+
+    .ending_logo::after {
+        width: 80%;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .header_logo {
+        font-size: 27px;
+        font-weight: 600;
+    }
+    .slogan {
+        margin-left: 100px;
+        font-size: 14px;
+        line-height: 0.9;
+    }
+
+    .nav {
+        font-size: 16px;
+    }
+    
+    .nav_link {
+        margin: 0 20px;
+    }
+
+    .intro_welcome {
+        font-size:50px;
+    }
+    
+    .intro_logo { 
+        font-size:60px;
+    }
+    
+    .intro_slogan {
+        font-size:30px;
+        line-height: 3;
+    }
+
+    .section {
+        padding-top: 50px;
+    }
+
+    .section_header {
+        font-size: 20px;
+        font-weight: 600;
+    }
+    
+    .section_header::after {
+        width: 70px;
+        height: 3px;
+        margin: 5px auto;
+    }
+
+    .tabs_nav {
+        padding: 0 20px;
+        width: 80%;
+    }
+    
+    .dropbtn {
+        padding: 16px;
+        font-size: 14px;
+        font-weight: 600;
+    }
+    
+    .dropbtn:hover  {
+        font-weight: 700;
+        font-size: 16px;
+    }
+    
+    .dropbtn.active {
+        font-size: 16px;
+    }
+
+    .service_block h2 {
+        font-size: 22px;
+        font-weight: 600;
+    }
+    
+    .service_block ul li {
+        font-size: 15px;
+        font-weight: 350;
+    }
+
+    .blog_text h1 {
+        font-size: 22px;
+    }
+    
+    .blog_text p {
+        font-size: 15px;
+    }
+    
+    .ending_logo {
+        font-size: 27px;
+        font-weight: 600;
+    }
+
+    .ending_logo::after {
+        width: 80%;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 800px) {
+    .header_logo {
+        font-size: 27px;
+        font-weight: 600;
+    }
+    .slogan {
+        margin-left: 100px;
+        font-size: 14px;
+        line-height: 0.9;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .nav_2 .active {
+        display: flex;
+    }
+
+    .nav_toggle {
+        display: block;
+    }
+
+    .toggle_item {
+        display: block;
+    }
+
+    .intro_welcome {
+        font-size:50px;
+    }
+    
+    .intro_logo { 
+        font-size:60px;
+    }
+    
+    .intro_slogan {
+        font-size:30px;
+        line-height: 3;
+    }
+
+    .section {
+        padding-top: 50px;
+    }
+
+    .section_header {
+        font-size: 20px;
+        font-weight: 600;
+    }
+    
+    .section_header::after {
+        width: 70px;
+        height: 3px;
+        margin: 5px auto;
+    }
+
+    .tabs_nav {
+        padding: 0 20px;
+        width: 80%;
+    }
+    
+    .client {
+        max-width: 190px;
+    }
+
+    .dropbtn {
+        padding: 16px;
+        font-size: 14px;
+        font-weight: 600;
+    }
+    
+    .dropbtn:hover  {
+        font-weight: 700;
+        font-size: 16px;
+    }
+    
+    .dropbtn.active {
+        font-size: 16px;
+    }
+
+    .service_block h2 {
+        font-size: 22px;
+        font-weight: 600;
+    }
+    
+    .service_block ul li {
+        font-size: 15px;
+        font-weight: 350;
+    }
+
+    .ending_logo {
+        font-size: 27px;
+        font-weight: 600;
+    }
+
+    .ending_logo::after {
+        width: 80%;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 650px) {
+    .intro_welcome {
+        font-size:40px;
+    }
+    
+    .intro_logo { 
+        font-size:50px;
+    }
+    
+    .intro_slogan {
+        font-size:25px;
+        line-height: 3;
+    }
+
+    .section {
+        padding-top: 40px;
+    }
+
+    .section_header {
+        font-size: 17px;
+        font-weight: 500;
+    }
+    
+    .section_header::after {
+        width: 70px;
+        height: 3px;
+        margin: 5px auto 0;
+    }
+
+    .section_text {
+        padding: 10px 20px;
+        line-height: 2;
+    }
+
+    .client {
+        max-width: 140px;
+    }
+
+/* Services */
+    .section_services {
+        margin-top: 30px;
+    }
+    
+    .dropbtn {
+        padding: 9px;
+        font-size: 12px;
+        font-weight: 600;
+    }
+    
+    .dropbtn:hover  {
+        font-weight: 650;
+        font-size: 13px;
+    }
+    
+    .dropbtn.active {
+        font-size: 13px;
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+    .dropdown-content {
+        right: 20px;
+        padding-top: 20px;
+    }
+
+    .service_block {
+        margin: 20px 30px;    
+    }
+
+    .service_block h2 {
+        font-size: 22px;
+        font-weight: 600;
+    }
+    
+    .service_block ul li {
+        font-size: 15px;
+        font-weight: 350;
+    }
+/* Services */
+
+/* Публикации */
+
+/* Публикации */
+
+/* Контакти */
+.contacts_header {
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+.contacts_inner{
+    text-decoration: none;
+    color: black;
+    font-size: 13px;
+    font-weight: 600;
+}
+/* Контакти */
+
+    .ending {
+        padding-bottom: 10px;
+        height: 90px;
+    }
+
+    .ending_logo {
+        font-size: 22px;
+        font-weight: 600;
+    }
+
+    .ending_logo::after {
+        width: 90%;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 550px) {
+    .header_logo {
+        margin: 0 0 0 30px;
+        font-size: 24px;
+        font-weight: 600;
+    }
+    .slogan {
+        margin-left: 70px;
+        font-size: 13px;
+    }
+
+    .nav_toggle {
+        right: 30px;
+    }
+
+    .section {
+        padding-top: 30px;
+    }
+
+    .section_header {
+        font-size: 14px;
+        font-weight: 500;
+    }
+    
+    .section_header::after {
+        width: 60px;
+        height: 3px;
+        margin: 5px auto 0;
+    }
+    
+    .about_logo {
+        font-size: 25px;
+        font-weight: 650;
+    }
+
+    .section_text p {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .client {
+        max-width: 120px;
+    }
+
+/* Services */
+    .section_services {
+        margin-top: 10px;
+        padding: 0 10px;
+    }
+    
+    .dropbtn {
+        padding: 8px;
+        font-size: 11px;
+        font-weight: 550;
+        letter-spacing: 1px;
+    }
+    
+    .dropbtn:hover  {
+        font-weight: 650;
+        font-size: 12.5px;
+    }
+    .dropbtn.active {
+        font-size: 12.5px;
+    }
+
+    .content {
+        padding: 10px;
+    }
+
+    .dropdown-content {
+        right: 20px;
+        padding-top: 20px;
+    }
+
+    .service_block {
+        margin: 20px 30px;    
+    }
+
+    .service_block h2 {
+        font-size: 22px;
+        font-weight: 600;
+    }
+    
+    .service_block ul li {
+        font-size: 15px;
+        font-weight: 350;
+    }
+/* Services */
+
+/* Публикации */
+    .date p {
+        font-size: 14px;
+    }
+
+    .blog_text h1 { 
+        font-size: 20px;
+    }
+
+    .blog_text p {
+        font-size: 14px;
+    }
+
+    .blog_text a {
+        font-size: 14px;
+    }
+/* Публикации */
+
+/* Контакти */
+.contacts_header {
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+.contacts_inner{
+    text-decoration: none;
+    color: black;
+    font-size: 13px;
+    font-weight: 600;
+}
+/* Контакти */
+
+    .ending {
+        padding-bottom: 10px;
+        height: 90px;
+    }
+
+    .ending_logo {
+        margin-left: 12px;
+        font-size: 19px;
+        font-weight: 600;
+    }
+
+    .ending_logo::after {
+        width: 90%;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 450px) {
+    .intro_welcome {
+        font-size:40px;
+    }
+    
+    .intro_logo { 
+        font-size:50px;
+    }
+    
+    .intro_slogan {
+        font-size:25px;
+    }
+
+    .tabs_nav {
+        padding: 0 0;
+        width: 80%;
+    }
+
+    .blog_item {
+        width: 100%;
+        max-width: 250px;
+        margin: 0 5px;
+    }
+
+    .date p {
+        font-size: 12px;
+    }
+
+    .blog_text h1 {
+        font-size: 16px;
+    }
+
+    .blog_text p {
+        font-size: 12px;
+    }
+
+    .blog_text a {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 350px) {
+    .header_logo {
+        margin: 0 0 0 20px;
+        font-size: 22px;
+        font-weight: 600;
+    }
+    .header_slogan {
+        display: none;
+    }
+
+    .nav_toggle {
+        right: 20px;
+    }
+
+    .intro_welcome {
+        font-size:30px;
+    }
+    
+    .intro_logo { 
+        font-size:40px;
+    }
+    
+    .intro_slogan {
+        font-size:20px;
+        line-height: 3;
+    }
+
+    .tabs_nav {
+        padding: 0 0;
+        width: 100%;
+    }
+
+    .dropbtn {
+        padding: 5px;
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 1px;
+    }
+    
+    .dropbtn:hover  {
+        font-weight: 650;
+        font-size: 12px;
+    }
+    
+    .dropbtn.active {
+        font-size: 12px;
+    }
+
+    .blog_item {
+        width: 100%;
+        max-width: 210px;
+        margin: 0 2px;
+    }
+
+    .date p {
+        font-size: 10px;
+    }
+
+    .blog_text h1 {
+        font-size: 14px;
+    }
+
+    .blog_text p {
+        font-size: 10px;
+    }
+
+    .blog_text a {
+        font-size: 10px;
+    }
+}
